@@ -19,7 +19,12 @@ const images = {
   chevronRight: require('../Images/Icons/chevron-right.png'),
   hamburger: require('../Images/Icons/hamburger.png'),
   backButton: require('../Images/Icons/back-button.png'),
-  closeButton: require('../Images/Icons/close-button.png')
+  closeButton: require('../Images/Icons/close-button.png'),
+
+
+  backgroundBlue: require('../Images/BG2.png'),
+  backgroundPurple: require('../Images/BG3.png'),
+  filmReel: require('../Images/film.jpg')
 }
 
 export default images

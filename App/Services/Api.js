@@ -2,7 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
+const create = (baseURL = 'google.com') => {
   // ------
   // STEP 1
   // ------
@@ -15,6 +15,17 @@ const create = (baseURL = 'https://api.github.com/') => {
     // here are some default headers
     headers: {
       'Cache-Control': 'no-cache'
+    },
+    // 2 second timeout...
+    timeout: 2000
+  })
+
+  const movieApi = apisauce.create({
+    // base URL is read from the "constructor"
+    baseURL,
+    // here are some default headers
+    headers: {
+      'Cache-Control': 'no-cache',
     },
     // 10 second timeout...
     timeout: 10000
@@ -38,6 +49,13 @@ const create = (baseURL = 'https://api.github.com/') => {
   const getRate = () => api.get('rate_limit')
   const getUser = (username) => api.get('search/users', {q: username})
 
+  // https://developers.themoviedb.org/3/search/search-movies
+  const getMovies = (query, page) => api.get('3/search/movie', {
+    api_key: 'b29c4ac366d63a4ab701cf589e54adac',
+    query,
+    page,
+  })
+
   // ------
   // STEP 3
   // ------
@@ -54,7 +72,8 @@ const create = (baseURL = 'https://api.github.com/') => {
     // a list of the API functions from step 2
     getRoot,
     getRate,
-    getUser
+    getUser,
+    getMovies
   }
 }
 

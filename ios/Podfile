@@ -38,6 +38,10 @@ target 'SocraticBananas' do
 
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
   target 'SocraticBananasTests' do
     inherit! :search_paths
     # Pods for testing
